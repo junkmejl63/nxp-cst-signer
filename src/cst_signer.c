@@ -329,7 +329,7 @@ static int create_csf_file_v1(image_block_t *blocks, int idx, char *ofname)
         
         if ( 0 == strncmp(rvalue, sz_pkcs11prefix, strlen(sz_pkcs11prefix)) ) {
           // PEGE: Don't add path when we are using pkcs#11
-           printf("NOT TESTED, do not add path when we are using pkcs#11\n");
+           printf("NOT TESTED: processing pkcs#11 uri\n");
            fprintf(fp_csf_file, "\tFile = \"%s\"\n", rvalue);
         } else {
            fprintf(fp_csf_file, "\tFile = \"%s/crts/%s\"\n", g_cst_path, rvalue);
@@ -344,7 +344,7 @@ static int create_csf_file_v1(image_block_t *blocks, int idx, char *ofname)
         else {
            if ( 0 == strncmp(rvalue, sz_pkcs11prefix, strlen(sz_pkcs11prefix)) ) {
              // PEGE: Don't add path when we are using pkcs#11
-             printf("Don't add path when we are using pkcs#11\n");
+             printf("Processing pkcs#11 uri\n");
              fprintf(fp_csf_file, "\tFile = \"%s\"\n", rvalue);
              
            } else {
@@ -456,7 +456,7 @@ static int create_csf_file_v1(image_block_t *blocks, int idx, char *ofname)
         else {
            if ( 0 == strncmp(rvalue, sz_pkcs11prefix, strlen(sz_pkcs11prefix)) ) {
              // PEGE: Don't add path when we are using pkcs#11
-             printf("Don't add path when we are using pkcs#11\n");
+             printf("Processing pkcs#11 uri\n");
              fprintf(fp_csf_file, "\tFile = \"%s\"\n", rvalue);
            } else {     
               fprintf(fp_csf_file, "\tFile = \"%s/crts/%s\"\n", g_cst_path, rvalue);
